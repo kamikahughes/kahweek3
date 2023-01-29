@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Wine Quality Decision Tree Model</title>
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            text-align: center;
+        }
+    
+        h1 {
+            color: blue;
+        }
+    
+        h4 {
+            color: orange;
+        }
+    
+        form {
+            display: inline-block;
+            text-align: left;
+        }
+    
+        input[type="text"] {
+            width: 300px;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+        }
+    
+        input[type="submit"] {
+            width: 200px;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    
+        li {
+            list-style-type: none;
+        }
+
+    </style>
+    
+</head>
+<body>
+    <h1>Wine Quality Prediction</h1>
+    <h4>Author:  Kamika Hughes</h4>
+    <p>This model will make predictions for wine quality using the numbers provided for alcohol, wine density, volatile acidity, and chlorides.</p>
+
+    <form action="{{ url_for('predict')}}" method="POST">
+        alcohol:  <input type="text" name="alcohol"></br>
+        density:  <input type="text" name="density"></br>
+	  volatile_acidity:  <input type="text" name="volatile_acidity"></br>
+	  chlorides:  <input type="text" name="chlorides"></br>
+
+        <input type=submit value=Submit>
+   </form>
+    <h2>Prediction: {{ predict }}</h2>
+    <h2>Thank you for using Kamika's Wine Quality Prediction Model</h2>
+    <p>This machine learning model will use Docker for containerization</p>
+    <p>ANA680 Week 3</p>
+    
+</body>
+</html>
